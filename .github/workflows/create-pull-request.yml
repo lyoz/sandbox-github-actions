@@ -1,0 +1,14 @@
+name: Create pull request from issue
+
+on:
+  issues:
+    types: opened
+
+jobs:
+  create_pull_request:
+    name: Create pull request
+    runs-on: ubuntu-latest
+    env:
+      TITLE: ${{ github.event.issue.title }}
+    steps:
+      - run: echo ${TITLE}
